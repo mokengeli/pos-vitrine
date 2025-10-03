@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Message envoyé - Mokengeli Biloko POS</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .thank-you-section {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #1a1d2e 0%, #2d3142 100%);
+            color: var(--white);
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .thank-you-content {
+            max-width: 600px;
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        .success-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--secondary-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 2rem;
+            font-size: 3rem;
+            animation: scaleIn 0.5s ease-out;
+        }
+
+        .thank-you-content h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--white);
+        }
+
+        .thank-you-content p {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .thank-you-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        @keyframes scaleIn {
+            from {
+                transform: scale(0);
+            }
+            to {
+                transform: scale(1);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .thank-you-content h1 {
+                font-size: 2rem;
+            }
+
+            .thank-you-content p {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section class="thank-you-section">
+        <div class="thank-you-content">
+            <div class="success-icon">
+                ✓
+            </div>
+            <h1>Message envoyé avec succès !</h1>
+            <p>Merci pour votre intérêt pour Mokengeli Biloko POS.</p>
+            <p>Notre équipe a bien reçu votre message et vous contactera dans les plus brefs délais pour discuter de vos besoins et organiser une démonstration personnalisée.</p>
+
+            <div class="thank-you-buttons">
+                <a href="index.html" class="btn btn-primary">Retour à l'accueil</a>
+                <a href="index.html#fonctionnalites" class="btn btn-secondary">Découvrir les fonctionnalités</a>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

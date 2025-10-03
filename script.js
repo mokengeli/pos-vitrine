@@ -16,27 +16,37 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Form submission handling
+// Form submission handling avec Ajax pour contrôler la redirection
 const contactForm = document.getElementById('contactForm');
 if (contactForm) {
-    contactForm.addEventListener('submit', function(e) {
-        e.preventDefault();
+    contactForm.addEventListener('submit', async function(e) {
+        e.preventDefault(); // Empêcher la soumission normale
 
-        // Get form data
-        const formData = {
-            nom: document.getElementById('nom').value,
-            email: document.getElementById('email').value,
-            telephone: document.getElementById('telephone').value,
-            restaurant: document.getElementById('restaurant').value,
-            message: document.getElementById('message').value
-        };
+        const formData = new FormData(contactForm);
+        const submitButton = contactForm.querySelector('button[type="submit"]');
 
-        // Here you would typically send the data to a server
-        // For now, we'll just show a success message
-        alert('Merci pour votre message! Nous vous contacterons bientôt.');
+        // Désactiver le bouton pendant l'envoi
+        submitButton.disabled = true;
+        submitButton.textContent = 'Envoi en cours...';
 
-        // Reset form
-        contactForm.reset();
+        try {
+            // Envoyer les données à FormSubmit
+            await fetch(contactForm.action, {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            });
+
+            // Rediriger vers la page de remerciement
+            window.location.href = 'merci.html';
+        } catch (error) {
+            // En cas d'erreur, afficher un message
+            alert('Une erreur est survenue. Veuillez réessayer.');
+            submitButton.disabled = false;
+            submitButton.textContent = 'Envoyer le message';
+        }
     });
 }
 

@@ -521,6 +521,44 @@ footer {
     opacity: 0.7;
 }
 
+/* Scroll to Top Button */
+.scroll-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background: var(--secondary-color);
+    color: var(--white);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 15px rgba(255, 140, 66, 0.4);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 999;
+}
+
+.scroll-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.scroll-to-top:hover {
+    background: #ff7526;
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(255, 140, 66, 0.6);
+}
+
+.scroll-to-top svg {
+    width: 24px;
+    height: 24px;
+}
+
 /* Animations */
 @keyframes fadeInUp {
     from {

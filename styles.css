@@ -47,6 +47,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 2rem;
 }
 
 .logo {
@@ -79,6 +80,24 @@ header {
 
 .nav-links a:hover {
     color: var(--secondary-color);
+}
+
+.btn-login {
+    padding: 8px 20px;
+    border-radius: 20px;
+    background: var(--secondary-color);
+    color: var(--white);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: all 0.3s;
+    white-space: nowrap;
+}
+
+.btn-login:hover {
+    background: #ff7526;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 140, 66, 0.4);
 }
 
 /* Hero Section */
@@ -185,6 +204,40 @@ header {
     font-size: 1.2rem;
     color: var(--text-light);
     margin-bottom: 3rem;
+}
+
+/* Android Badge */
+.android-badge {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    background: linear-gradient(135deg, #3DDC84 0%, #2DA871 100%);
+    color: var(--white);
+    padding: 0.75rem 1.5rem;
+    border-radius: 30px;
+    max-width: fit-content;
+    margin: 0 auto 2rem;
+    box-shadow: 0 4px 15px rgba(61, 220, 132, 0.3);
+    font-weight: 600;
+}
+
+.android-icon {
+    font-size: 1.5rem;
+}
+
+.android-text {
+    font-size: 1rem;
+}
+
+.android-badge a {
+    color: var(--white);
+    text-decoration: underline;
+    font-weight: 700;
+}
+
+.android-badge a:hover {
+    opacity: 0.8;
 }
 
 /* Features Grid */
@@ -577,6 +630,11 @@ footer {
         display: none;
     }
 
+    .btn-login {
+        font-size: 0.85rem;
+        padding: 6px 15px;
+    }
+
     .hero h1 {
         font-size: 2.5rem;
     }
@@ -618,6 +676,15 @@ footer {
 
     .kpi-title {
         font-size: 2rem;
+    }
+
+    .android-badge {
+        font-size: 0.9rem;
+        padding: 0.6rem 1.2rem;
+    }
+
+    .android-icon {
+        font-size: 1.2rem;
     }
 }
 
